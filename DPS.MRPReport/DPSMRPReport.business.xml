@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Zawiera informację nagłówkową pliku XML oraz informację o użytym kodowaniu znaków. -->
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.enova.pl/schema/business_struct.xsd" xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/business_struct.xsd" name="DPSMRPReport" namespace="DPS.MRPReport" versionName="DPSMRPReport" versionNumber="1">
+  <using>Soneta.Business.Db</using>
+  <using>Soneta.Business.App</using>
+  <using>Soneta.Core</using>
+  <using>Soneta.Core.DbTuples</using>
+  <using>Soneta.Deklaracje</using>
+  <using>Soneta.Handel</using>
+  <using>Soneta.Produkcja</using>
+  <using>Soneta.ProdukcjaPro</using>
+  <using>Soneta.Kadry</using>
+  <using>Soneta.Oceny</using>
+  <using>Soneta.Place</using>
+  <using>Soneta.Kalend</using>
+  <using>Soneta.CRM</using>
+  <using>Soneta.CRM.Config</using>
+  <using>Soneta.CRM.Wizytowki</using>
+  <using>Soneta.SrodkiTrwale</using>
+  <using>Soneta.Zadania</using>
+  <using>Soneta.Ksiega</using>
+  <using>Soneta.Towary</using>
+  <using>Soneta.Magazyny</using>
+  <using>Soneta.Kasa</using>
+  <using>Soneta.Waluty</using>
+  <using>Soneta.HR</using>
+  <using>Soneta.RMK</using>
+  <using>Soneta.Workflow</using>
+  <using>Soneta.Zadania.Budzetowanie</using>
+  <using>Soneta.Workflow.Dms</using>
+  <using>Soneta.Workflow.Dms.Config</using>
+  <using>Soneta.Web.Business.App</using>
+  <using>Soneta.Workflow.Config</using>
+  <using>DPS.MRPReport.Enums</using>
+  <using>DPS.MRPReport.Rows</using>
+  <using>DPS.MRPReport.Rows.Extensions</using>
+  <using>DPS.MRPReport.Tables</using>
+  <using>DPS.MRPReport.Tables.Extensions</using>
+  <!-- -->
+  <!--Enums-->
+  <enum name="ObtainingMethodEnum" />
+  <enum name="OrderingPolicyEnum" />
+  <enum name="QualityAssessmentEnum" />
+  <enum name="APSReportMRPPositionRelTypeEnum" />
+  <!-- -->
+  <!--Interfaces-->
+  <!-- -->
+  <!--APSDefDokHandlowegoExt-->
+  <table name="APSDefDokHandlowegoExt" tablename="APSDefDHExt" guided="Root">
+    <col name="DefDokHandlowego" type="DefDokHandlowego" keyprimary="true" keyunique="true" delete="cascade" relguided="inner" relright="true" readonly="true" required="true" />
+    <col name="IsReportMRP" type="boolean" modifier="public virtual" caption="Czy raport MRP" />
+    <col name="MRPIsRequisitionDef" type="boolean" modifier="public virtual" caption="MRP - Zapotrzebowanie" />
+  </table>
+  <!-- -->
+  <!--APSDostawcaTowaruExt-->
+  <table name="APSDostawcaTowaruExt" tablename="APSDostTowExt">
+    <col name="DostawcaTowaru" type="DostawcaTowaru" keyprimary="true" keyunique="true" delete="cascade" relguided="inner" relright="true" readonly="true" required="true" />
+    <col name="Priority" type="double" modifier="public virtual" caption="Priorytet" />
+    <col name="QualityAssessment" type="QualityAssessmentEnum" modifier="public virtual" caption="Ocena jakości" />
+    <col name="LogisticalMinimum" type="Quantity" modifier="public virtual" caption="Minimum logistyczne" />
+    <col name="Description" type="string" length="400" modifier="public virtual" caption="Opis" />
+  </table>
+  <!-- -->
+  <!--APSMagazynExt-->
+  <table name="APSMagazynExt" tablename="APSMagExt" guided="Root">
+    <col name="Magazyn" type="Magazyn" keyprimary="true" keyunique="true" delete="cascade" relguided="inner" relright="true" readonly="true" required="true" />
+    <col name="IsReportMRP" type="boolean" modifier="public virtual" caption="Czy raport MRP" />
+  </table>
+  <!-- -->
+  <!--APSMinimalStock-->
+  <table name="APSMinimalStock" tablename="APSMinStocks">
+    <col name="Towar" type="Towar" required="true" readonly="true" caption="Towar" />
+    <col name="Period" type="FromTo" required="true" modifier="public virtual" caption="Okres" />
+    <col name="Quantity" type="Quantity" modifier="public virtual" caption="Ilość" />
+  </table>
+  <!-- -->
+  <!--APSPozycjaDokHandlowegoExt-->
+  <table name="APSPozycjaDokHandlowegoExt" tablename="APSPozDHExt">
+    <col name="PozycjaDokHandlowego" type="PozycjaDokHandlowego" keyprimary="true" keyunique="true" delete="cascade" relguided="inner" relright="true" readonly="true" required="true" />
+    <col name="DeliveryDate" type="date" modifier="public virtual" caption="Data dostawy" />
+  </table>
+  <!-- -->
+  <!--APSReportMRPElement-->
+  <table name="APSReportMRPElement" tablename="APSRepMRPElems" guided="Root">
+    <col name="Towar" type="Towar" keyprimary="true" keyunique="true" delete="cascade" readonly="true" required="true" modifier="public virtual" caption="Towar" />
+    <col name="ObtainingMethod" type="ObtainingMethodEnum" modifier="public virtual" readonly="set" caption="Metoda uzyskania" />
+  </table>
+  <!-- -->
+  <!--APSReportMRPPosition-->
+  <table name="APSReportMRPPosition" tablename="APSReportMRP">
+    <col name="ReportMRPElement" type="APSReportMRPElement" children="Positions" delete="cascade" readonly="true" required="true" modifier="public virtual" caption="Element raportu MRP" />
+    <col name="Quantity" type="Quantity" modifier="public virtual" caption="Ilość" />
+    <col name="Direction" type="KierunekPartii" modifier="public virtual" caption="Kierunek" />
+    <col name="DefinitionCode" type="string" length="12" modifier="public virtual" caption="Kod definicji" />
+    <col name="DocumentNumber" type="string" length="40" modifier="public virtual" caption="Numer pełny dokumentu" />
+    <col name="ObtainingMethod" type="ObtainingMethodEnum" modifier="public virtual" readonly="set" caption="Metoda uzyskania" />
+    <col name="ObtainingPeriod" type="int" modifier="public virtual" caption="Okres uzyskania (dni)" />
+    <col name="StartDate" type="date" modifier="public virtual" caption="Data startu" />
+    <col name="AvailabilityDate" type="date" modifier="public virtual" caption="Data dostępności" />
+    <col name="BalanceQuantity" type="Quantity" modifier="public virtual" caption="Ilość bilans" />
+    <col name="CreatedFromSuggestion" type="boolean" modifier="public virtual" caption="Utworzone z sugestii" />
+  </table>
+  <!-- -->
+  <!--APSReportMRPPositionRel-->
+  <table name="APSReportMRPPositionRel" tablename="APSRepMRPPosRel">
+    <key name="WgParentChildRelationType" keyprimary="true" keyunique="true">
+      <keycol name="Parent" />
+      <keycol name="Child" />
+      <keycol name="RelationType" />
+    </key>
+    <col name="Parent" type="APSReportMRPPosition" delete="cascade" readonly="true" required="true" modifier="public virtual" caption="Nadrzędna" />
+    <col name="Child" type="APSReportMRPPosition" readonly="true" required="true" modifier="public virtual" caption="Podrzędna" />
+    <col name="RelationType" type="APSReportMRPPositionRelTypeEnum" readonly="true" required="true" modifier="public virtual" caption="Typ relacji" />
+  </table>
+  <!-- -->
+  <!--APSTowarExt-->
+  <table name="APSTowarExt" tablename="APSTowaryExt" guided="Root">
+    <col name="Towar" type="Towar" keyprimary="true" keyunique="true" delete="cascade" relguided="inner" relright="true" readonly="true" required="true" modifier="public virtual" caption="Towar" />
+    <col name="MRPIsReportMRP" type="boolean" modifier="public virtual" caption="Czy raport MRP" />
+    <col name="MRPObtainingMethod" type="ObtainingMethodEnum" modifier="public virtual" caption="Metoda uzyskania" />
+    <col name="MRPObtainingPeriod" type="int" modifier="public virtual" caption="Okres uzyskania (dni)" />
+    <col name="MRPOrderingPolicy" type="OrderingPolicyEnum" modifier="public virtual" caption="Polityka zamawiania" />
+    <col name="MRPOrderingQuantity" type="Quantity" modifier="public virtual" caption="Ilość zamawiana" />
+    <col name="MRPMinimumReserve" type="Quantity" modifier="public virtual" caption="Zapas minimalny" />
+    <col name="MRPLogisticalMinimum" type="Quantity" modifier="public virtual" caption="Minimum logistyczne" />
+  </table>
+</module>
