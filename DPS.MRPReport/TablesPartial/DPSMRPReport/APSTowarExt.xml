@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Zawiera informację nagłówkową pliku XML oraz informację o użytym kodowaniu znaków. -->
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns="http://www.enova.pl/schema/business_struct.xsd"
+		xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/business_struct.xsd">
+	<table name="APSTowarExt"
+		   tablename="APSTowaryExt"
+		   guided="Root">
+		<col name="Towar"
+			type="Towar"
+			keyprimary="true"
+			keyunique="true"
+			delete="cascade"
+			relguided="inner"
+			relright="true"
+			readonly="true"
+			required="true"
+			modifier="public virtual"
+			caption="Towar" />
+		<col name="MRPIsReportMRP"
+			type="boolean"
+			modifier="public virtual"
+			caption="Czy raport MRP" />
+		<col name="MRPObtainingMethod"
+			type="ObtainingMethodEnum"
+			modifier="public virtual"
+			caption="Metoda uzyskania" />
+		<col name="MRPObtainingPeriod"
+			type="int"
+			modifier="public virtual"
+			caption="Okres uzyskania (dni)" />
+		<col name="MRPOrderingPolicy"
+			type="OrderingPolicyEnum"
+			modifier="public virtual"
+			caption="Polityka zamawiania" />
+		<col name="MRPOrderingQuantity"
+			type="Quantity"
+			modifier="public virtual"
+			caption="Ilość zamawiana" />
+		<col name="MRPMinimumReserve"
+			type="Quantity"
+			modifier="public virtual"
+			caption="Zapas minimalny" />
+		<col name="MRPLogisticalMinimum"
+			type="Quantity"
+			modifier="public virtual"
+			caption="Minimum logistyczne" />
+	</table>
+</module>

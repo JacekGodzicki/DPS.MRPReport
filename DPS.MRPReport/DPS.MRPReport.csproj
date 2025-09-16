@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Soneta.Sdk">
+	<PropertyGroup>
+		<TargetFramework>$(SonetaTargetFramework)</TargetFramework>
+	</PropertyGroup>
+	<Target Name="PreBuild" BeforeTargets="ResolvePackageAssets">
+		<Exec Command="Powershell.exe -file &quot;$(ProjectDir)TablesPartial\MergeTable.ps1&quot;" />
+	</Target>
+	<Target Name="PreBuild6" AfterTargets="PrepareSonetaGeneratorAssets" BeforeTargets="ExecuteSonetaGenerator" Condition="'@(WorkingXmls)' == ''">
+		<Error Text="Soneta.Generator tool/task is missing." Condition=" '@(SonetaGeneratorExe)' == '' AND '$(SonetaGeneratorTaskAssembly)' == '' " />
+		<PropertyGroup>
+			<MetadataToRemove>Pack;PackagePath;SubType</MetadataToRemove>
+		</PropertyGroup>
+		<ItemGroup>
+			<WorkingXmls Include="*.business.xml" RemoveMetadata="$(MetadataToRemove)" />
+		</ItemGroup>
+		<Message Text="Found business.xml: + @(WorkingXmls)" />
+	</Target>
+</Project>

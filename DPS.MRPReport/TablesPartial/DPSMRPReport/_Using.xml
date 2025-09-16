@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Zawiera informację nagłówkową pliku XML oraz informację o użytym kodowaniu znaków. -->
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns="http://www.enova.pl/schema/business_struct.xsd"
+		xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/business_struct.xsd"
+		name="DPSMRPReport"
+		namespace="DPS.MRPReport"
+		versionName="DPSMRPReport"
+		versionNumber="1">
+	<using>Soneta.Business.Db</using>
+	<using>Soneta.Business.App</using>
+	<using>Soneta.Core</using>
+	<using>Soneta.Core.DbTuples</using>
+	<using>Soneta.Deklaracje</using>
+	<using>Soneta.Handel</using>
+	<using>Soneta.Produkcja</using>
+	<using>Soneta.ProdukcjaPro</using>
+	<using>Soneta.Kadry</using>
+	<using>Soneta.Oceny</using>
+	<using>Soneta.Place</using>
+	<using>Soneta.Kalend</using>
+	<using>Soneta.CRM</using>
+	<using>Soneta.CRM.Config</using>
+	<using>Soneta.CRM.Wizytowki</using>
+	<using>Soneta.SrodkiTrwale</using>
+	<using>Soneta.Zadania</using>
+	<using>Soneta.Ksiega</using>
+	<using>Soneta.Towary</using>
+	<using>Soneta.Magazyny</using>
+	<using>Soneta.Kasa</using>
+	<using>Soneta.Waluty</using>
+	<using>Soneta.HR</using>
+	<using>Soneta.RMK</using>
+	<using>Soneta.Workflow</using>
+	<using>Soneta.Zadania.Budzetowanie</using>
+	<using>Soneta.Workflow.Dms</using>
+	<using>Soneta.Workflow.Dms.Config</using>
+	<using>Soneta.Web.Business.App</using>
+	<using>Soneta.Workflow.Config</using>
+	<using>DPS.MRPReport.Enums</using>
+	<using>DPS.MRPReport.Rows</using>
+	<using>DPS.MRPReport.Rows.Extensions</using>
+	<using>DPS.MRPReport.Tables</using>
+	<using>DPS.MRPReport.Tables.Extensions</using>
+</module>

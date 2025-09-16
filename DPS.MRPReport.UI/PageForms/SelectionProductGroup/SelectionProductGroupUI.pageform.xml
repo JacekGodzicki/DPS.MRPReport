@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataForm
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		Priority="1"
+		RightName="Page:SelectionProductGroupUIPage"
+		xmlns="http://www.enova.pl/schema/form.xsd"
+		DataType="DPS.MRPReport.UI.Workers.SelectionProductGroup.SelectionProductGroupUI, DPS.MRPReport.UI">
+	<Page Name="SelectionProductGroupUIPage" CaptionHtml="Wybór grup towarowych" DataContext="{DataSource}">
+		<Grid Width="*" Height="*" EditValue="{Source}" IsToolbarVisible="false"
+			IsFilterRowVisible="true" EditInPlace="true" KeepsSequence="true" 
+			TreeNodesValue="{Children}" TreeHasNodesValue="{Children}" TreeParentValue="{Parent}" TreeExpandingLevel="ExpandAll">
+			<Field CaptionHtml="Wartość" Width="30" EditValue="{DictionaryItem.Value}" IsReadOnly="true" />
+			<Field CaptionHtml="Opis" Width="30" EditValue="{DictionaryItem.Description}" IsReadOnly="true" />
+			<Field CaptionHtml="Wybór" Width="7" EditValue="{Selection}" />
+		</Grid>
+	</Page>
+</DataForm>

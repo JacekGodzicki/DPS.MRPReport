@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          RightName="Page:APSReportMRPElementMainPage"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="DPS.MRPReport.Rows.APSReportMRPElement, DPS.MRPReport" >
+	<Page Name="APSReportMRPElementMainPage" CaptionHtml="Szczegóły" DataContext="{DataSource}">
+		<Group CaptionHtml="Pozycje" >
+			<Grid Width="*" Height="*" OrderBy="AvailabilityDate" EditValue="{Positions}"
+					ResourceName="APSReportMRPElementPosGrid" Name="APSReportMRPElementPosGrid"
+					IsToolbarVisible="false" IsFilterRowVisible="false" RemoveButton="None">
+				<Field CaptionHtml="Kod" Width="22" EditValue="{ReportMRPElement.Towar.Kod}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Nazwa" Width="50" EditValue="{ReportMRPElement.Towar.Nazwa}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Kierunek" Width="10" EditValue="{Direction}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Kod definicji" Width="10" EditValue="{DefinitionCode}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Numer pełny dokumentu" Width="20" EditValue="{DocumentNumber}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Utworzone z sugestii" Width="17" EditValue="{CreatedFromSuggestion}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Metoda uzyskania" Width="17" EditValue="{ObtainingMethod}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Okres uzyskania (dni)" Width="13" EditValue="{ObtainingPeriod}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Data startu" Width="10" EditValue="{StartDate}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Data dostępności" Width="14" EditValue="{AvailabilityDate}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Ilość przychód" Width="10" EditValue="{IcomeQuantity}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Ilość rozchód" Width="10" EditValue="{OutcomeQuantity}" Class="PreventOrderBy" Footer="None" />
+				<Field CaptionHtml="Ilość bilans" Width="12" EditValue="{BalanceQuantity}" Class="PreventOrderBy" Footer="None" />
+			</Grid>
+		</Group>
+	</Page>
+</DataForm>

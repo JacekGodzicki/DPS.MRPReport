@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		  xmlns="http://www.enova.pl/schema/form.xsd">
+	<Flow Name="FilterPanel">
+	</Flow>
+	<Grid Name="List" OrderBy="Kod" IsToolbarVisible="false" IsFilterRowVisible="true">
+		<Field CaptionHtml="Kod" Width="15" EditValue="{ReportMRPElement.Towar.Kod}" Footer="None" />
+		<Field CaptionHtml="Nazwa" Width="50" EditValue="{ReportMRPElement.Towar.Nazwa}" Footer="None" />
+		<Field CaptionHtml="Kierunek" Width="15" EditValue="{Direction}" Footer="None" />
+		<Field CaptionHtml="Kod definicji" Width="10" EditValue="{DefinitionCode}" Footer="None" />
+		<Field CaptionHtml="Numer pełny dokumentu" Width="20" EditValue="{DocumentNumber}" Footer="None" />
+		<Field CaptionHtml="Metoda uzyskania" Width="15" EditValue="{ObtainingMethod}" Footer="None" />
+		<Field CaptionHtml="Okres uzyskania (dni)" Width="12" EditValue="{ObtainingPeriod}" Footer="None" />
+		<Field CaptionHtml="Data startu" Width="12" EditValue="{StartDate}" Footer="None" />
+		<Field CaptionHtml="Data dostępności" Width="12" EditValue="{AvailabilityDate}" Footer="None" />
+		<Field CaptionHtml="Ilość przychód" Width="10" EditValue="{IcomeQuantity}" Footer="None" />
+		<Field CaptionHtml="Ilość rozchód" Width="10" EditValue="{OutcomeQuantity}" Footer="None" />
+		<Field CaptionHtml="Ilość bilans" Width="12" EditValue="{BalanceQuantity}" Footer="None" />
+	</Grid>
+</DataForm>

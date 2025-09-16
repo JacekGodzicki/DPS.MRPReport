@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		  xmlns="http://www.enova.pl/schema/form.xsd"
+		  RightName="Page:ConfigReportMRPMagazynyPage"
+		  RightCaption="ConfigRapMRPMagazynyPage">
+	<Page Name="ConfigReportMRPMagazynyPage" CaptionHtml="Smart APS/Raport MRP/Magazyny">
+		<Group CaptionHtml="Magazyny" LabelWidth="40" DataContext="{new ConfigReportMRPMagazynyExtender}">
+			<Grid EditValue="{ConfigWorker.APSMagExtViewInfo}" Width="*" Height="*" ResourceName="ConfigReportMRPMagazynyGrid"
+				  EditInPlace="true" IsFilterRowVisible="true" IsToolbarVisible="true">
+				<Field Width="20" CaptionHtml="Kod" EditValue="{Magazyn.Kod}" IsReadOnly="true" Footer="None" />
+				<Field Width="50" CaptionHtml="Nazwa" EditValue="{Magazyn.Nazwa}" IsReadOnly="true" Footer="None" />
+				<Field Width="12" CaptionHtml="Czy raport MRP" EditValue="{IsReportMRP}" Footer="None" />
+			</Grid>
+		</Group>
+	</Page>
+</DataForm>

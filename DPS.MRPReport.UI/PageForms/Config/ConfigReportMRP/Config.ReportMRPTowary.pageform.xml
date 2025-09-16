@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		  xmlns="http://www.enova.pl/schema/form.xsd"
+		  RightName="Page:ConfigAPSTowaryPage"
+		  RightCaption="ConfigReportMRPTowaryPage">
+	<Page Name="ConfigReportMRPTowaryPage" CaptionHtml="Smart APS/Raport MRP/Towary" DataContext="{new ConfigReportMRPTowaryExtender}">
+		<Group CaptionHtml="Towary" LabelWidth="40" >
+			<Flow>
+				<Command CaptionHtml="Wybierz wg grup towarowych" Width="20" MethodName="SelectProductGroups"/>
+				<Command CaptionHtml="Odrzuć wg grup towarowych" Width="20" MethodName="UnselectProductGroups"/>
+			</Flow>
+			<Grid EditValue="{ConfigWorker.APSTowaryExtViewInfo}" Width="*" Height="*"
+				ResourceName="ConfigReportMRPTowaryGrid" EditInPlace="true" IsFilterRowVisible="true" IsToolbarVisible="true">
+				<Field Width="20" CaptionHtml="Kod" EditValue="{Towar.Kod}" IsReadOnly="true" Footer="None" />
+				<Field Width="60" CaptionHtml="Nazwa" EditValue="{Towar.Nazwa}" IsReadOnly="true" Footer="None" />
+				<Field Width="30" CaptionHtml="Grupa" EditValue="{Towar.Workers.APSTowarExt.Extension.CommodityGroup}" IsReadOnly="true" Footer="None" />
+				<Field Width="13" CaptionHtml="Domyślna tech." EditValue="{ExistsDefaultTechnology}" IsReadOnly="true" Footer="None" />
+				<Field Width="13" CaptionHtml="Czy raport MRP" EditValue="{MRPIsReportMRP}" Footer="None" />
+				<Field Width="12" CaptionHtml="Metoda uzyskania" EditValue="{MRPObtainingMethod}" Footer="None" />
+				<Field Width="15" CaptionHtml="Okres uzyskania (dni)" EditValue="{MRPObtainingPeriod}" Footer="None" />
+				<Field Width="15" CaptionHtml="Polityka zamawiania" EditValue="{MRPOrderingPolicy}" Footer="None" />
+				<Field Width="15" CaptionHtml="Minimum logistyczne" EditValue="{MRPLogisticalMinimum}" Footer="None" />
+				<Field Width="15" CaptionHtml="Ilość zamawiana" EditValue="{MRPOrderingQuantity}" Footer="None" />
+				<Field Width="15" CaptionHtml="Zapas minimalny" EditValue="{MRPMinimumReserve}" Footer="None" />
+				<Data Name="showGroupPanel" Value="1" />
+			</Grid>
+		</Group>
+	</Page>
+</DataForm>

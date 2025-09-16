@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Windows": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files (x86)\\Soneta\\enova365 $(SonetaPackageVersion)\\SonetaExplorer.exe",
+      "commandLineArgs": "--nodbextensions --extpath=.\\"
+    },
+    "Server": {
+      "commandName": "Executable",
+      "executablePath": "C:\\_enova_multi\\Soneta.Standard.$(SonetaPackageVersion)\\Soneta.Standard\\Soneta.Products.Server.Standard\\server.exe",
+      "commandLineArgs": "--console --nodbextensions --dbname=NAZWA_BAZY_DANYCH --extpath=.\\"
+    }
+  }
+}

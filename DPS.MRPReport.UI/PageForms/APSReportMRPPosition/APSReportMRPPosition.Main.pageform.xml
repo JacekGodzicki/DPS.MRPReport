@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          RightName="Page:APSReportMRPPositionMainPage"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="DPS.MRPReport.Rows.APSReportMRPPosition, DPS.MRPReport" >
+	<Page Name="APSReportMRPPositionMainPage" CaptionHtml="Ogólne" DataContext="{DataSource}">
+		<Group CaptionHtml="Ogólne" IsReadOnly="true">
+			<Field Width="100" EditValue="{ReportMRPElement}"/>
+			<Field Width="100" EditValue="{ReportMRPElement.Towar}"/>
+			<Field Width="20" EditValue="{Quantity}" />
+			<Field Width="20" EditValue="{Direction}" />
+			<Field Width="20" EditValue="{DefinitionCode}" />
+			<Field Width="20" EditValue="{DocumentNumber}" />
+			<Field Width="20" EditValue="{ObtainingMethod}" />
+			<Field Width="20" EditValue="{ObtainingPeriod}" />
+			<Field Width="20" EditValue="{StartDate}" />
+			<Field Width="20" EditValue="{AvailabilityDate}" />
+			<Field Width="20" EditValue="{BalanceQuantity}" />
+		</Group>
+		<Group CaptionHtml="Powiązane pozycje" IsReadOnly="true">
+			<Field Width="100" EditValue="{Parent}" />
+			<Field Width="100" EditValue="{RelatedSuggestionChild}" />
+			<Field Width="100" EditValue="{RelatedSuggestionParent}" />
+		</Group>
+		<Group CaptionHtml="Podrzędne pozycje" Visibility="{IsVisibleChildrenView()}">
+			<Grid EditValue="{ChildrenView}" Width="*" Height="*"
+			  ResourceName="APSReportMRPPositionChildrenGrid" EditInPlace="false" IsFilterRowVisible="false" IsToolbarVisible="false">
+				<Field Width="60" CaptionHtml="Element raportu MRP" EditValue="{ReportMRPElement}" Footer="None" />
+				<Field Width="13" CaptionHtml="Ilość" EditValue="{Quantity}" Footer="None" />
+				<Field Width="13" CaptionHtml="Kierunek" EditValue="{Direction}" Footer="None" />
+				<Field Width="15" CaptionHtml="Kod definicji" EditValue="{DefinitionCode}" Footer="None" />
+				<Field Width="12" CaptionHtml="Numer pełny dokumentu" EditValue="{DocumentNumber}" Footer="None" />
+				<Field Width="15" CaptionHtml="Metoda uzyskania" EditValue="{ObtainingMethod}" Footer="None" />
+				<Field Width="15" CaptionHtml="Okres uzyskania (dni)" EditValue="{ObtainingPeriod}" Footer="None" />
+				<Field Width="15" CaptionHtml="Data startu" EditValue="{StartDate}" Footer="None" />
+				<Field Width="15" CaptionHtml="Data dostępności" EditValue="{AvailabilityDate}" Footer="None" />
+				<Field Width="15" CaptionHtml="Ilość bilans" EditValue="{BalanceQuantity}" Footer="None" />
+			</Grid>
+		</Group>
+	</Page>
+</DataForm>

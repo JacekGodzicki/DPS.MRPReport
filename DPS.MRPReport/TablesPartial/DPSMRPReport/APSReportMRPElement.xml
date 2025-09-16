@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Zawiera informację nagłówkową pliku XML oraz informację o użytym kodowaniu znaków. -->
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns="http://www.enova.pl/schema/business_struct.xsd"
+		xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/business_struct.xsd">
+	<table name="APSReportMRPElement"
+		   tablename="APSRepMRPElems"
+		   guided="Root">
+		<col name="Towar"
+			type="Towar"
+			keyprimary="true"
+			keyunique="true"
+			delete="cascade"
+			readonly="true"
+			required="true"
+			modifier="public virtual"
+			caption="Towar" />
+		<col name="ObtainingMethod"
+			type="ObtainingMethodEnum"
+			modifier="public virtual"
+			readonly="set"
+			caption="Metoda uzyskania" />
+	</table>
+</module>

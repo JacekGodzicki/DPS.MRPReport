@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		  xmlns="http://www.enova.pl/schema/form.xsd"
+		  RightName="Page:ConfigRapMRPOgolne"
+		  RightCaption="ConfigRapMRPOgolnePage">
+	<Page Name="ConfigRapMRPOgolnePage" CaptionHtml="Smart APS/Raport MRP/Ogólne" DataContext="{new ConfigReporMRPMainExtender}">
+		<Group CaptionHtml="Ogólne" LabelWidth="45" DataContext="{ConfigWorker}" >
+			<Field Width="50" EditValue="{IncludeOnlyWorkDays}" />
+			<Field Width="50" EditValue="{LimitNumberOfDaysAheadForCalc}" />
+			<Field Width="50" EditValue="{NumberOfDaysAheadForCalc}" />
+			<Field Width="50" EditValue="{IncludeOrderingPolicy}" />
+			<Field Width="50" EditValue="{IncludeRequisitionDocuments}" />
+			<Field Width="50" EditValue="{ReduceSalesPlansByOrderQuantity}" />
+			<Field Width="7" EditValue="{RecalculateAfterCreatingDocumentOrOrder}" />
+			<Field Width="7" EditValue="{DefaultCommodityIsReportMRP}" />
+			<Field Width="50" EditValue="{FeatureDefinitionCommodityGroup}" />
+		</Group>
+		<Group CaptionHtml="Dokumenty" LabelWidth="45" DataContext="{ConfigWorker}" >
+			<Field Width="50" EditValue="{IncludeDocsInBuffer}" />
+			<Field Width="50" EditValue="{ApproveDocuments}" />
+			<Field Width="50" EditValue="{OrdersToRecipientsDefs}" />
+			<Field Width="7" EditValue="{IncludeOrdersToRecipientsCorrections}" />
+			<Field Width="50" EditValue="{OrdersToSupplierDefs}" />
+			<Field Width="7" EditValue="{IncludeOrdersToSupplierCorrections}" />
+			<Field Width="50" EditValue="{RequisitionDocumentDefs}" />
+		</Group>
+		<Group CaptionHtml="Akcje (Workery)" LabelWidth="45" DataContext="{ConfigWorker}" >
+			<Group CaptionHtml="Ogólne">
+				<Field Width="50" EditValue="{AllowGenerateZPFromSZ}" />
+				<Field Width="50" EditValue="{AllowGenerateZDFromSP}" />
+				<Field Width="50" EditValue="{ChangeSPToSZRemoveMaterials}" />
+			</Group>
+			<Group CaptionHtml="Generowanie zamówień">
+				<Field Width="50" EditValue="{OrdersGenLimitContractorsToSuppliers}" />
+			</Group>
+		</Group>
+	</Page>
+</DataForm>
+

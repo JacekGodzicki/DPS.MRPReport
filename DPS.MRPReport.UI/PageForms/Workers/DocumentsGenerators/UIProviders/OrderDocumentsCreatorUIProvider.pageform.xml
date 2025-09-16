@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+		  Priority="0"
+		  RightName="Page:OrderDocumentsCreatorUIProvider"
+          DataType="DPS.MRPReport.UI.Workers.DocumentsGenerators.UIProviders.OrderDocumentsCreatorUIProvider, DPS.MRPReport.UI">
+	<Page Name="OrderDocumentsCreatorUIProviderPage" CaptionHtml="Tworzenie Zamówienia" DataContext="{DataSource}">
+		<Stack>
+			<Grid Width="*" Height="*" EditValue="{TowarModels}" SelectedValue="{SelectedTowarModels}"
+				NewInPlace="false" IsToolbarVisible="false" EditInPlace="true" IsFilterRowVisible="true" OrderBy="Priority desc" >
+				<Field CaptionHtml="Towar" EditValue="{Towar}" Width="50" IsReadOnly="true" />
+				<Field CaptionHtml="Termin" EditValue="{Term}" Width="10" />
+				<Field CaptionHtml="Ilość sugestia" EditValue="{SuggestionQuantity}" Width="10" IsReadOnly="true" />
+				<Field CaptionHtml="Minimum logistyczne" EditValue="{LogisticalMinimum}" Width="15" IsReadOnly="true" />
+				<Field CaptionHtml="Ilość" EditValue="{Quantity}" Width="10" />
+				<Field CaptionHtml="Dostawca" EditValue="{Supplier}" Width="30" />
+				<Field CaptionHtml="Cena zakupu (netto)" EditValue="{PurchasePriceNetto}" Width="15" IsReadOnly="true" />
+				<Field CaptionHtml="Cena zakupu (brutto)" EditValue="{PurchasePriceBrutto}" Width="15" IsReadOnly="true" />
+			</Grid>
+		</Stack>
+	</Page>
+</DataForm>

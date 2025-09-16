@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataForm
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		Priority="1"
+		RightName="Page:ReportMRPUIPage"
+		xmlns="http://www.enova.pl/schema/form.xsd"
+		DataType="DPS.MRPReport.UI.Workers.ReportMRP.ReportMRPUI, DPS.MRPReport.UI">
+	<Page Name="ReportMRPUIPage" CaptionHtml="Smart APS/Raport MRP/Raport" DataContext="{new ReportMRPUI}">
+		<Row Name="FilterPanel" DataContext="{Context}">
+			<Field CaptionHtml="Data ostatnie przeliczenie" Width="15" EditValue="{ReportMRPUIParams.LastCalculationDate}" />
+		</Row>
+		<Flow Name="FilterPanel" DataContext="{Context}">
+			<Field CaptionHtml="Rodzaj raportu" Width="20" EditValue="{ReportMRPUIParams.ReportMRPType}" />
+			<Field CaptionHtml="Dokładność grupowania" Width="12" EditValue="{ReportMRPUIParams.GroupingAccuracy}" />
+			<Field CaptionHtml="Dokladność grupowania - liczba kolumn" Width="5" EditValue="{ReportMRPUIParams.NumberOfColumns}" />
+			<Field CaptionHtml="Wybrane dni" Width="15" EditValue="{ReportMRPUIParams.SelectedDates}" />
+		</Flow>
+		<Group CaptionHtml="Raport MRP">
+			<Include Source="{ReportMRPGridUIElement}"/>
+		</Group>
+	</Page>
+</DataForm>

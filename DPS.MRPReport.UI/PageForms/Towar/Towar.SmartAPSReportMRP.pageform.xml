@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          RightName="Page:TowarSmartAPSReportMRP"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Soneta.Towary.Towar, Soneta.Handel" >
+	<Page Name="TowarSmartAPSReportMRPPage" CaptionHtml="Smart APS/Raport MRP" DataContext="{DataSource}">
+		<Group CaptionHtml="Raport MRP">
+			<Field Width="30" CaptionHtml="Grupa" EditValue="{Workers.APSTowarExt.Extension.CommodityGroup}" />
+			<Field Width="30" CaptionHtml="Domyślna tech." EditValue="{Workers.APSTowarExt.Extension.ExistsDefaultTechnology}" />
+			<Field Width="7" CaptionHtml="Czy raport MRP" EditValue="{Workers.APSTowarExt.Extension.MRPIsReportMRP}" />
+			<Field Width="30" CaptionHtml="Metoda uzyskania" EditValue="{Workers.APSTowarExt.Extension.MRPObtainingMethod}" />
+			<Field Width="30" CaptionHtml="Okres uzyskania (dni)" EditValue="{Workers.APSTowarExt.Extension.MRPObtainingPeriod}" />
+			<Field Width="30" CaptionHtml="Polityka zamawiania" EditValue="{Workers.APSTowarExt.Extension.MRPOrderingPolicy}" />
+			<Field Width="30" CaptionHtml="Minimum logistyczne" EditValue="{Workers.APSTowarExt.Extension.MRPLogisticalMinimum}" />
+			<Field Width="30" CaptionHtml="Ilość zamawiana" EditValue="{Workers.APSTowarExt.Extension.MRPOrderingQuantity}" />
+		</Group>
+	</Page>
+</DataForm>

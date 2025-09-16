@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          RightName="Page:APSTowarExtMainPage"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="DPS.MRPReport.Rows.APSTowarExt, DPS.MRPReport" >
+	<Page Name="APSTowarExtMainPage" CaptionHtml="Ogólne" DataContext="{DataSource}">
+		<Group CaptionHtml="Ogólne" >
+			<Field Width="100" EditValue="{Towar}" IsReadOnly="true"/>
+			<Field Width="8" EditValue="{IsReportMRP}" Footer="None" />
+			<Field Width="12" EditValue="{ObtainingMethod}" />
+			<Field Width="15" EditValue="{ObtainingPeriod}" />
+			<Field Width="20" EditValue="{OrderingPolicy}" />
+			<Field Width="20" EditValue="{OrderingQuantity}" />
+			<Field Width="20" EditValue="{MinimumReserve}" />
+		</Group>
+	</Page>
+</DataForm>

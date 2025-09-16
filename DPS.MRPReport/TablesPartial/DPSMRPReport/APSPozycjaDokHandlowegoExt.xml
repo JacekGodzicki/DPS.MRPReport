@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Zawiera informację nagłówkową pliku XML oraz informację o użytym kodowaniu znaków. -->
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.enova.pl/schema/business_struct.xsd" xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/business_struct.xsd">
+	<table name="APSPozycjaDokHandlowegoExt" tablename="APSPozDHExt">
+		<col name="PozycjaDokHandlowego"
+			type="PozycjaDokHandlowego"
+			keyprimary="true"
+			keyunique="true"
+			delete="cascade"
+			relguided="inner"
+			relright="true"
+			readonly="true"
+			required="true" />
+		<col name="DeliveryDate"
+			type="date"
+			modifier="public virtual"
+			caption="Data dostawy" />
+	</table>
+</module>

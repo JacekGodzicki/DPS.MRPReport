@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+		  Priority="0"
+		  RightName="Page:ShowSuppliersUIPage"
+          DataType="DPS.MRPReport.UI.Workers.ShowSuppliers.ShowSuppliersUI, DPS.MRPReport.UI">
+	<Page Name="ShowSuppliersUIPage" CaptionHtml="Pokaż dostawców" DataContext="{DataSource}">
+		<Stack>
+			<Grid Width="*" Height="*" EditValue="{KontrahentSupplierModels}"
+				NewInPlace="false" IsToolbarVisible="false" EditInPlace="true" IsFilterRowVisible="true" OrderBy="Priority desc">
+				<Field CaptionHtml="Utwórz/Aktualizuj" EditValue="{CreateOrUpdate}" Width="15" />
+				<Field CaptionHtml="Priorytet" EditValue="{Priority}" Width="15" />
+				<Field CaptionHtml="Kontrahent" EditValue="{Kontrahent}" Width="40" IsReadOnly="true" />
+				<Field CaptionHtml="Termin" EditValue="{Term}" Width="6" IsReadOnly="true" />
+				<Field CaptionHtml="Ocena jakości" EditValue="{QualityAssessment}" Width="10" IsReadOnly="true" />
+				<Field CaptionHtml="Cena zakupu (netto)" EditValue="{PurchasePriceNetto}" Width="15" IsReadOnly="true" />
+				<Field CaptionHtml="Cena zakupu (brutto)" EditValue="{PurchasePriceBrutto}" Width="15" IsReadOnly="true" />
+				<Field CaptionHtml="Aktualny dostawca" EditValue="{IsKontrahentSupplier}" Width="15" IsReadOnly="true" />
+			</Grid>
+		</Stack>
+	</Page>
+</DataForm>

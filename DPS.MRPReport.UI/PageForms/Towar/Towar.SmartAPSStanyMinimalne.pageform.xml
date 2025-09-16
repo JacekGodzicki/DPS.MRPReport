@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          RightName="Page:TowarSmartAPSStanyMinimalne"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Soneta.Towary.Towar, Soneta.Handel" >
+	<Page Name="TowarSmartAPSStanyMinimalnePage" CaptionHtml="Smart APS/Stany minimalne" DataContext="{DataSource}">
+		
+		<Field Width="30" CaptionHtml="Standardowy stan minimalny" EditValue="{Workers.APSTowarExt.Extension.MRPMinimumReserve}" />
+		<Group DataContext="{new APSMinimalStockPageExtender}">
+			<Grid
+				Width="*"
+				Height="*"
+				OrderBy="Date"
+				EditValue="{PositionsViewInfo}"
+				Name="APSStanyMinimalneGrid"
+				ResourceName="APSStanyMinimalneGrid"
+				IsToolbarVisible="true"
+				IsFilterRowVisible="true"
+				NewInPlace="true"
+				EditInPlace="true"
+			>
+				<Field Width="30" CaptionHtml="Okres" EditValue="{Period}"/>
+				<Field Width="30" CaptionHtml="Ilość" EditValue="{Quantity}"/>
+			</Grid>
+		</Group>		
+	</Page>
+</DataForm>

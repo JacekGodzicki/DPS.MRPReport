@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          RightName="Page:TowarSmartAPSMain"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Soneta.Towary.Towar, Soneta.Handel" >
+	<Page Name="TowarSmartAPSMainPage" CaptionHtml="Smart APS/Konfiguracja" DataContext="{DataSource}">
+		<Group CaptionHtml="Konfiguracja" >
+			<Field Width="7" EditValue="{Workers.APSTowarExt.Extension.AllowOnZDOnlyRestrictedSuppliers}" />
+		</Group>
+	</Page>
+</DataForm>
+
